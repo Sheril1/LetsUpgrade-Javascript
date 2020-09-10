@@ -8,19 +8,39 @@
 <body>
     <h1>Question 3</h1>
     <script>
-        let a = ["Javascript","Python","SQL","Java","Html","C++"];
-        let b="SQL";
-        for(let i=0;i<a.length;i++)
-        {
-            if(a[i]==b)
+        let details=[
+            { 
+                name:"Radha",
+                age:25,
+                country:"India",
+                hobbies:["singing","dancing","drawing"]
+            },
             {
-                console.log(`${b} is present at ${a.indexOf(b)} index position`);
+                name:"Ram",
+                age:24,
+                country:"India",
+                hobbies:["rapping","dancing","video games"]
+            },
+            {
+                name:"Rocky",
+                age:23,
+                country:"Germany",
+                hobbies:["drawing","reading","dancing"]
+            },
+            {
+                name:"Jenny",
+                age:20,
+                country:"America",
+                hobbies:["singing","reading","badminton"]
             }
-            else
+        ]
+        function Display(){
+            for(let i=0;i<details.length;i++)
             {
-                continue;
+                console.log(details[i]);
             }
         }
+        Display();
     </script>
 </body>
 </html>

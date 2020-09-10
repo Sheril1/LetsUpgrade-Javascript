@@ -8,15 +8,52 @@
 <body>
     <h1>Question 4</h1>
     <script>
-        let a = ["Python","Javascript","Java","C++","SQL","Html","CSS"];
-        console.log(`"a" is present in the following elements:`);
-        a.forEach(function(ele) 
-        {
-            if(ele.includes("a"))
-        {
-            console.log(ele)
+        let details=[
+            { 
+                name:"Radha",
+                age:35,
+                country:"India",
+                hobbies:["singing","dancing","drawing"]
+            },
+            {
+                name:"Ram",
+                age:24,
+                country:"India",
+                hobbies:["rapping","dancing","video games"]
+            },
+            {
+                name:"Rocky",
+                age:30,
+                country:"Germany",
+                hobbies:["drawing","reading","dancing"]
+            },
+            {
+                name:"Jenny",
+                age:20,
+                country:"America",
+                hobbies:["singing","reading","badminton"]
+            }
+        ]
+        console.log("Objects having age less than 30 are as follows:");
+        function AgeDisplay(){
+            details.forEach(function(obj){
+                if(obj.age<30)
+                {
+                    console.log(obj);
+                }
+            });
         }
-        });
+        AgeDisplay();
+        console.log("Objects having country as 'India' are as follows:");
+        function CDisplay(){
+            details.forEach(function(ele){
+                if(ele.country=="India")
+                {
+                    console.log(ele);
+                }
+            });
+        }
+        CDisplay();
     </script>
 </body>
 </html>
