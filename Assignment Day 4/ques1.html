@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Question 1</h1>
+    <center><img src="https://i.pinimg.com/originals/f7/b2/91/f7b2914dade6dcc0a8a7038106ffa6ae.jpg" 
+        width="350px"
+        height="600px"
+        id="image"/><br>
+    <button onclick="Change1()">First</button>
+    <button onclick="Change2()">Second</button>
+    <button onclick="Change3()">Third</button></center>
+    
+    <script>
+       function Change2(){
+           const a = document.getElementById("image");
+           a.src="https://qph.fs.quoracdn.net/main-qimg-97bf47b13aae157b896b4ed472fa0d53";
+        }
+        function Change3(){
+            const b = document.getElementById("image");
+            b.src="https://i.pinimg.com/originals/53/35/2c/53352cfa271ff3773734c4de5418b6f4.jpg";
+        }
+        function Change1(){
+            const c = document.getElementById("image");
+            c.src="https://i.pinimg.com/originals/f7/b2/91/f7b2914dade6dcc0a8a7038106ffa6ae.jpg";
+        }
+    </script>
+</body>
+</html>
