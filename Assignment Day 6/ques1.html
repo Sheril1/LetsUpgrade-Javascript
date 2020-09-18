@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body{ 
+            background-color:wheat;
+        } 
+        #block{
+            width:80%;
+            height:600px;
+            margin-top: 5%;;
+            margin-left:10%;
+            background-color:aquamarine;
+            font-family:"Georgia";
+            padding:20px;
+        }
+        h1{
+            margin-bottom: 10px;
+            font-family: 'Trebuchet MS';
+        }
+        button{
+            padding:5px;
+        }
+        th,td{
+            height:40px;
+            text-align: center;
+        }
+        #text{
+            margin-bottom: 20px;
+            height:25px;
+            width:25%;
+            background-color:lightsalmon;
+        }
+    </style>
+</head>
+<body>
+    <div id="block">
+        <h1><center>DETAILS</center></h1>
+        <input type="text" placeholder="Search here...." id="text" onkeyup="Search()"/>
+        <table border="1" class="table" width="100%" cellspacing="0">
+            <thead>
+                <tr>
+                    <th>SR.NO</th>
+                    <th>NAME</th>
+                    <th>AGE</th>
+                    <th>CITY</th>
+                    <th>SALARY</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody class="tdata"></tbody>
+
+        </table>
+    </div>
+
+
+    <script>
+        let details=[
+            {
+                name:"Ross",
+                age:40,
+                city:"Moscow",
+                salary:20000
+            },
+            {
+                name:"Monica",
+                age:28,
+                city:"Rome",
+                salary:45000
+            },
+            {
+                name:"Joey",
+                age:35,
+                city:"New Delhi",
+                salary:30000
+            },
+            { 
+                name:"Rachel",
+                age:20,
+                city:"Berlin",
+                salary:15000
+            },
+            {
+                name:"Chandler",
+                age:35,
+                city:"Santiago",
+                salary:40000
+            }
+        ]
+
+        function display(array){
+            let tabledata="";
+            array.forEach(function(ele,index){
+                let row=`
+                <tr>
+                <td>${index+1}</td>
+                <td>${ele.name}</td>
+                <td>${ele.age}</td>
+                <td>${ele.city}</td>
+                <td>${ele.salary}</td>
+                <td><button onclick="deleteData(${index})">Delete</button></td>
+                </tr>`
+                tabledata += row;
+            });
+            document.getElementsByClassName("tdata")[0].innerHTML=tabledata;
+        }
+        display(details);
+
+        function Search(){
+            let word=document.getElementById("text").value;
+            let searchresult=details.filter(function(ele){
+                return ele.name.toUpperCase().indexOf(word.toUpperCase()) != -1 || ele.city.toUpperCase().indexOf(word.toUpperCase()) != -1;
+            });
+            display(searchresult);
+        }
+
+        function deleteData(index){
+            details.splice(index,1);
+            display(details);
+        }
+
+    </script>
+</body>
+</html>
