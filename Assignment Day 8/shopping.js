@@ -180,7 +180,7 @@ function addToCart(id){
         return ele.id==id;
     })
     let pro=getProductByID(products,id);
-    if(popUp==0)
+    if(popUp.length==0)
     {
         cart.push(pro);
         displayProducts(cart,"cart"); 
